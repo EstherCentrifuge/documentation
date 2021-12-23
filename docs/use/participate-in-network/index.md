@@ -1,3 +1,10 @@
+---
+id: chain-governance
+order: 8
+title: "Participate in Governance"
+contributors: <Kate Beecroft:kate@centrifuge.io>, <Cassidy Daly:cassidy@centrifuge.io>
+---
+
 # Centrifuge Governance
 Governance in Centrifuge refers to both the on-chain voting and off-chain coordination used to govern (both Centrifuge and Altair). Governance refers to any activity taken to propose changes to the protocol or ecosystem. These include but are not limited to; the Centrifuge chain, CFG token reward rates, runtime upgrades, integrations, chain parameters, transactions fees, and governance parameters.
 
@@ -148,12 +155,15 @@ Please select the appropriate conviction when voting on the referendum
 
 Referenda can be found onchain under Governance -> Democracy -> Referenda. Voters can vote with higher conviction to have their vote count.
 
-
 #### How do votes succeed?
 
 The vote needed to pass is generally adaptive to the voter turnout (this is referred to as adaptive quorum biasing). Depending on which entity proposed the proposal and whether all council members voted yes, there are three different scenarios. We can use the following table for reference.
 
-<img width="639" alt="Gov proposing entity" src="https://user-images.githubusercontent.com/84034484/146755270-4917724a-b210-457f-a8eb-cb06e03a8970.png">
+| Proposing entity| Metric | Effect |
+| -------- | -------- | -------- |
+| Public | Super-Majority Approve | Positive Turnout Bias: Proposal requires a supermajority of aye votes (the lower the turnout, the higher the required aye majority) |
+| Council (Complete agreement) | Super-Majority Against | Negative Turnout Bias: Proposal requires a supermajority of nay votes (the lower the turnout, the higher the required nay votes) |
+| Council (Majority agreement) | Simple Majority | Proposal just needs more aye votes than nay |
 
 Votes are weighed based on 2 criteria:
 
@@ -172,7 +182,7 @@ What do we govern as a community and what are the relevant processes for each?
 
 ### What is the process for getting a proposal passed? 
 
-In simple terms the flow is as follows - off chain consultation > proposal of referenda > voting > enactment
+In simple terms the flow is as follows: `Off chain consultation > Proposal of referenda > Voting > Enactment` 
 
 Centrifuge uses an on-chain governance model with off-chain consultation, which means that first there must be a discussion off-chain (on the Centrifuge Forum, see below), and then the initiator can turn their initiative into a proposal (on-chain) to be voted on by the Chain Council.
 
